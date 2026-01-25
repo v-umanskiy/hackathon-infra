@@ -33,6 +33,11 @@ variable "lambda_memory_mb" {
   default = 256
 }
 
+variable "warm_schedule_expression" {
+  type    = string
+  default = "rate(5 minutes)"
+}
+
 variable "secret_name" {
   type        = string
   default     = "hackathon/api_keys"
