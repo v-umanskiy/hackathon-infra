@@ -12,7 +12,7 @@ resource "aws_lambda_function" "hackathon" {
 
   environment {
     variables = {
-      SECRETS_ARN = aws_secretsmanager_secret.api_keys.arn
+      SECRETS_ARN = data.aws_secretsmanager_secret.api_keys.arn
     }
   }
 

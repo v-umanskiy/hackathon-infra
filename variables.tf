@@ -20,7 +20,7 @@ variable "lambda_runtime" {
 
 variable "lambda_handler" {
   type    = string
-  default = "app.handler"
+  default = "lambda_function.lambda_handler"
 }
 
 variable "lambda_timeout" {
@@ -33,7 +33,23 @@ variable "lambda_memory_mb" {
   default = 256
 }
 
-variable "secret_name" {
+variable "secret_id" {
   type    = string
   default = "hackathon/api_keys"
+  description = "Secrets Manager name or ARN that already exists."
+}
+
+variable "api_stage_name" {
+  type    = string
+  default = "prod"
+}
+
+variable "api_throttle_rate_limit" {
+  type    = number
+  default = 1
+}
+
+variable "api_throttle_burst_limit" {
+  type    = number
+  default = 2
 }

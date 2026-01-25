@@ -3,5 +3,13 @@ output "lambda_name" {
 }
 
 output "secret_arn" {
-  value = aws_secretsmanager_secret.api_keys.arn
+  value = data.aws_secretsmanager_secret.api_keys.arn
+}
+
+output "api_base_url" {
+  value = "${aws_apigatewayv2_api.http_api.api_endpoint}/${aws_apigatewayv2_stage.default.name}"
+}
+
+output "transcribe_url" {
+  value = "${aws_apigatewayv2_api.http_api.api_endpoint}/${aws_apigatewayv2_stage.default.name}/transcribe"
 }

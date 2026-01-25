@@ -36,7 +36,7 @@ resource "aws_iam_role_policy" "lambda" {
         Action = [
           "secretsmanager:GetSecretValue"
         ]
-        Resource = aws_secretsmanager_secret.api_keys.arn
+        Resource = data.aws_secretsmanager_secret.api_keys.arn
       }
     ]
   })
