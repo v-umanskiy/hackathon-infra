@@ -3,7 +3,7 @@ output "lambda_name" {
 }
 
 output "secret_arn" {
-  value = data.aws_secretsmanager_secret.api_keys.arn
+  value = aws_secretsmanager_secret.api_keys.arn
 }
 
 output "api_base_url" {

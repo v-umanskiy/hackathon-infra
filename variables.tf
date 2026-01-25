@@ -33,10 +33,10 @@ variable "lambda_memory_mb" {
   default = 256
 }
 
-variable "secret_id" {
-  type    = string
-  default = "hackathon/api_keys"
-  description = "Secrets Manager name or ARN that already exists."
+variable "secret_name" {
+  type        = string
+  default     = "hackathon/api_keys"
+  description = "Secrets Manager name to create/manage (value set manually)."
 }
 
 variable "api_stage_name" {
