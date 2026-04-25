@@ -15,7 +15,7 @@ variable "lambda_name" {
 
 variable "lambda_runtime" {
   type    = string
-  default = "python3.10"
+  default = "python3.12"
 }
 
 variable "lambda_handler" {
