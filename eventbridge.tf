@@ -1,7 +1,7 @@
 resource "aws_cloudwatch_event_rule" "lambda_warm" {
   name                = "${var.lambda_name}-warm"
   schedule_expression = var.warm_schedule_expression
-  state               = "ENABLED"
+  state               = "DISABLED"
 }
 
 resource "aws_cloudwatch_event_target" "lambda_warm" {

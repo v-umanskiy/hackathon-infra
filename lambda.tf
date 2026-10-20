@@ -8,6 +8,9 @@ resource "aws_lambda_function" "hackathon" {
   timeout     = var.lambda_timeout
   memory_size = var.lambda_memory_mb
 
+  # Switched off: the demo endpoint is unauthenticated. Remove this line (or set -1) to re-enable.
+  reserved_concurrent_executions = 0
+
   filename = "${path.module}/lambda_placeholder.zip"
 
   environment {
